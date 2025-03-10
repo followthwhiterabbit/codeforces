@@ -1,5 +1,5 @@
 /*
- * --  leetcode 228A - 
+ * --  codeforces 228A - 
  */ 
 
 /*
@@ -46,20 +46,98 @@ Output
 */
 
 #include <iostream>
+#include <map>
+#include <array>
+/*
+we need to map from numbers to their count	
+1st example
+-----------
+	1 --> 1
+	7 --> 1 
+	3 --> 2  ---> we need one of this to another color, so we need to make 2 - 1 here
+
+	std::array<int, 4> arr{1, 7, 3, 3};
+
+2nd example
+-----------
+	7 --> 4  ---> we need to make this one so we need to make 4 - 1 , we need 3 of them 
+
+
+3rd example
+-----------
+	1 1 2 2 let's say 
+
+	element 1 ---> 2
+	element 2 ---> 2 
+
+
+
+
+for(auto &el : arr)
+{
+	arr[el]++; 	 --> not the index, array's elements' number will map to their occurrences 
+
+}
+
+
+
+
+
+*/
+
+
+int vanya_horse(std::array<int, 4> &arr) // we don't need copying
+{
+
+	std::map<int, int> newmap; 
+
+
+int needed_number =0; 
+
+	for(auto &el : arr)
+		newmap[el]++; 
+	
+	for(auto i : newmap)
+	{
+		if(i.second	> 1)
+			needed_number+=(i.second - 1); 	
+
+	}
+
+
+return needed_number;
+
+}
+
+
 
 
 int main(){
+/*	
+	std::array<int, 4> arr{7, 7, 6, 6};
+	std::map<int, int> newmap; 
+
+	int needed_number =0; 
+
+	for(auto &el : arr)
+		newmap[el]++; 
 	
+	for(auto i : newmap)
+	{
+		if(i.second	> 1)
+			needed_number+=(i.second - 1); 	
 
+	}	
+	
+	std::cout << needed_number << std::endl; 
+*/
+	std::array<int, 4> horsearray; 
 
+	for(int i = 0; i < 4; i++)
+		std::cin >> horsearray[i]; 
 
-
-
-
-
-
-
-
+	
+	std::cout << vanya_horse(horsearray);
 
 
 
