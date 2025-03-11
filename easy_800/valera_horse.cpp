@@ -81,6 +81,23 @@ for(auto &el : arr)
 
 
 
+C solution 
+-----------
+
+make a bool array -- 0 0 0 0 
+
+if you see an array like 1 2 3 4 -- 1 1 1 1 
+if you see an array like 7 7 7 7 -- 1 0 0 0 ---> count 0's 
+if you see an array like 3 4 5 5 -- 1 1 1 0 									
+
+
+
+
+
+
+
+
+
 
 
 */
