@@ -8,10 +8,7 @@
 	(0, u)
 	(0, d)
 
-	
-	
 we read by l, r, d, u 
-
 
 
 */
@@ -28,10 +25,6 @@ bool can_square_be_driven(int l, int r, int d, int u)
 		return false;
 
 }
-
-
-
-
 
 
 int main()
